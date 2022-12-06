@@ -1,17 +1,13 @@
 class Animal:
 # temporary habitat -- make so species determines which habitat is placed into; hyena habitat, lion habitat, etc
     
-    habitat = 'Zoo'
-    def __init__(self, name, species, age, sex, color, weight):
+    def __init__(self, name, age, sex, color, weight):
         self.name = name
-        self.species = species
         self.age = age
         self.sex = sex
         self.color = color
         self.weight = weight
 
-    def __str__(self):
-        return f"{self.name} is {self.age} years old. They belong to the habitat: {self.habitat}"
    
 # just testing code
 # bozoMonke = Animal('Bozo', 'Monkey', 45, 'Male', 'Black', '10 oz')
@@ -24,14 +20,34 @@ class Animal:
 
 # add habitat and species to these classes
 class Hyena(Animal):
-    pass
+    species = 'Hyena'
+    habitat = 'Hyena Habitat'
 
+    def __str__(self):
+        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
+    
 class Lion(Animal):
-    pass
+    species = 'Lion'
+    habitat = 'Lion Habitat'
+
+    def __str__(self):
+        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"    
 
 class Bear(Animal):
-    pass
+    species = 'Bear'
+    habitat = 'Bear Habitat'
+
+    def __str__(self):
+        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"    
 
 class Tiger(Animal):
-    pass
+    species = 'Tiger'
+    habitat = 'Tiger Habitat'
 
+    def __str__(self):
+        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
+
+
+
+# new_bear = Bear('Bearly', 3, 'Male', 'Black', '120 lbs')
+# print(new_bear)
