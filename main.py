@@ -48,12 +48,19 @@ class Tiger(Animal):
 
 # new_bear = Bear('Bearly', 3, 'Male', 'Black', '120 lbs')
 # print(new_bear)
-    
-animals = []
-counter = 1
 
-with open('arrivingAnimals.txt', 'r') as f:
-    for line in f:
-        if type(int(line[0:2])) == int:
-            print(counter)
-        counter = counter + 1
+f = open('arrivingAnimals.txt', 'r')
+
+animals = [line.strip() for line in f]
+
+animals = tuple(animals)
+
+print(animals[15])
+
+counter = 0
+
+for animal in animals:
+    counter = counter + 1
+    # start organizing info into different classes assigning id's
+    if type(animal[counter]) == str:
+        print('admitted', counter)
