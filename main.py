@@ -28,13 +28,13 @@ def gen_animal_name():
         pass
 
 def gen_zoo_habitats(species):
-    if species.lowercase() == 'hyena':
+    if species.lower() == 'hyena':
         return 'Hyena Habitat'
-    elif species.lowercase() == 'lion':
+    elif species.lower() == 'lion':
         return 'Lion Habitat'
-    elif species.lowercase() == 'bear':
+    elif species.lower() == 'bear':
         return 'Bear Habitat'
-    elif species.lowercase() == 'tiger':
+    elif species.lower() == 'tiger':
         return 'Tiger Habitat'
     else:
         return 'Temporary Habitat'
