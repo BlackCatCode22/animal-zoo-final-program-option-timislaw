@@ -1,4 +1,5 @@
 import random
+from itertools import islice
 
 f = open('animalNames.txt', 'r')
 
@@ -12,17 +13,29 @@ clean_names = []
 cleaner_names = []
 
 for line in names:
-    if ',' in line:
+    if ' ' in line:
         clean_names.append(line)
-    
+            
 for index in clean_names:
-    cleaner_names.extend(word for word in index.split() if ',' in word)
+    if counter % 2 != 0  :
+        cleaner_names.extend(word for word in index.split() if ',' in word)
+    counter = counter + 1
 
 counter = 0
 
 # use strip method to clean up each available name 
 cleaner_names = [s.strip(',') for s in cleaner_names]
-print(cleaner_names)
+
+# islicing
+length_to_split = [10, 11, 9, 9]
+
+input = iter(cleaner_names)
+cleaner_names = [list(islice(input, elem)) for elem in length_to_split]
+# used islice to clean up lists into sub lists and then reassigned each sublist to a new name group
+hy_names = cleaner_names[0]
+li_names = cleaner_names[1]
+be_names = cleaner_names[2]
+ti_names = cleaner_names[3]
 
 def gen_birthday():
     pass
@@ -31,17 +44,15 @@ def gen_animal_ID():
     id = random.randint(0, 1000)
     return id
 
-
-
 class Animal:
 # temporary habitat -- make so species determines which habitat is placed into; hyena habitat, lion habitat, etc
     
-    def __init__(self, age=0, sex='Male', color='N/A', weight='1oz', id=gen_animal_ID()):
+    def __init__(self, age=0, sex='Male', color='N/A', weight='1oz'):
         self.age = age
         self.sex = sex
         self.color = color
         self.weight = weight
-        self.id = id
+        self.id = gen_animal_ID()
 
 # add habitat and species to these classes
 
@@ -56,61 +67,64 @@ def gen_zoo_habitats(species):
         return 'Tiger Habitat'
     else:
         return 'Temporary Habitat'
-        
+            
+# assigns name based off species and selects a random name from list then removes that name from the list -- verify that works as intended
+def gen_animal_name(species):
+    if species.lower() == 'hyena':
+        return random.choice(hy_names)
+    elif species.lower() == 'lion':
+        return random.choice(li_names)
+    elif species.lower() == 'bear':
+        return random.choice(be_names)
+    else:
+        return random.choice(ti_names)
+
 class Hyena(Animal):
     species = 'Hyena'
     habitat = gen_zoo_habitats(species)
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = gen_animal_name(self.species)
+        hy_names.remove(self.name)
+        super().__init__()
 
     def __str__(self):
-        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
+        return f"ID: {self.id} {self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
     
 class Lion(Animal):
     species = 'Lion'
     habitat = gen_zoo_habitats(species)
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = gen_animal_name(self.species)
+        li_names.remove(self.name)
+        super().__init__()
 
     def __str__(self):
-        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"    
+        return f"ID: {self.id} {self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"    
 
 class Bear(Animal):
     species = 'Bear'
     habitat = gen_zoo_habitats(species)
 
-    def __init__(self, name):
-        self.name = name
-    
+    def __init__(self):
+        self.name = gen_animal_name(self.species)
+        be_names.remove(self.name)
+        super().__init__()    
     def __str__(self):
-        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"    
-
+        return f"ID: {self.id} {self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"    
+        
 class Tiger(Animal):
     species = 'Tiger'
     habitat = gen_zoo_habitats(species)
 
-    def __init__(self, name):
-        self.name = name    
+    def __init__(self):
+        self.name = gen_animal_name(self.species)
+        ti_names.remove(self.name)
+        super().__init__()    
 
     def __str__(self):
-        return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
-
-# assigns name based off species and selects a random name from list then removes that name from the list -- verify that works as intended
-def gen_animal_name(species, name):
-    if species.lower() == 'hyena':
-        name = cleaner_names[random.randint(0, 10)]
-        cleaner_names.remove(name)
-    elif species.lower() == 'lion':
-        name = cleaner_names[random.randint(11, 22)]
-        cleaner_names.remove(name)
-    elif species.lower() == 'bear':
-        name = cleaner_names[random.randint(22, 31)]
-        cleaner_names.remove(name)
-    else:
-        name = cleaner_names[random.randint(32, 41)]
-        cleaner_names.remove(name)
+        return f"ID: {self.id} {self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
 
 f = open('arrivingAnimals.txt', 'r')
 
@@ -126,8 +140,19 @@ counter = 0
 
 for animal in animals:
     counter = counter + 1
-    # start organizing info into different classes assigning id's
+    # start organizing info into different classes
     if type(animal[counter]) == str:
         # print('admitted', counter)
         pass
 
+new_bear = Bear()
+new_tiger = Tiger()
+new_lion = Lion()
+new_hyena = Hyena()
+
+print(new_bear)
+print(new_tiger)
+print(new_lion)
+print(new_hyena)
+
+print(cleaner_names)
