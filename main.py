@@ -7,7 +7,6 @@ class Animal:
         self.sex = sex
         self.color = color
         self.weight = weight
-
    
 # just testing code
 # bozoMonke = Animal('Bozo', 'Monkey', 45, 'Male', 'Black', '10 oz')
@@ -47,7 +46,14 @@ class Tiger(Animal):
     def __str__(self):
         return f"{self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
 
-
-
 # new_bear = Bear('Bearly', 3, 'Male', 'Black', '120 lbs')
 # print(new_bear)
+    
+animals = []
+counter = 1
+
+with open('arrivingAnimals.txt', 'r') as f:
+    for line in f:
+        if type(int(line[0:2])) == int:
+            print(counter)
+        counter = counter + 1
