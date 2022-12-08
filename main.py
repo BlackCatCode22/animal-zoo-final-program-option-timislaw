@@ -26,7 +26,7 @@ counter = 0
 # use strip method to clean up each available name 
 cleaner_names = [s.strip(',') for s in cleaner_names]
 
-# islicing
+# islicing -- https://docs.python.org/3/library/itertools.html#itertools.islice
 length_to_split = [10, 11, 9, 9]
 
 input = iter(cleaner_names)
@@ -78,6 +78,71 @@ def gen_animal_name(species):
         return random.choice(be_names)
     else:
         return random.choice(ti_names)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+f = open('arrivingAnimals.txt', 'r')
+
+animals = [line.strip() for line in f]
+
+f.close()
+
+animals = tuple(animals)
+
+# print(animals[15])
+
+
+# try fifo linked list to organize data and make a species class out of each one
+
+
+counter = 0
+
+for animal in animals:
+    counter = counter + 1
+    # start organizing info into different classes
+    if type(animal[counter]) == str:
+        # print('admitted', counter)
+        pass
+    if animal.find('spring'):
+        print('spring', counter)
+    elif animal.find('winter'):
+        print('winter', counter)
+    elif animal.find('fall'):
+        print('fall', counter)
+    else:
+        print('summer', counter)
+    print(animal)
+
+
+
+print(animals[0].find())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Hyena(Animal):
     species = 'Hyena'
@@ -126,33 +191,15 @@ class Tiger(Animal):
     def __str__(self):
         return f"ID: {self.id} {self.name} is a {self.age} year old {self.species}. They belong to the habitat: {self.habitat}"
 
-f = open('arrivingAnimals.txt', 'r')
-
-animals = [line.strip() for line in f]
-
-f.close()
-
-animals = tuple(animals)
-
-# print(animals[15])
-
-counter = 0
-
-for animal in animals:
-    counter = counter + 1
-    # start organizing info into different classes
-    if type(animal[counter]) == str:
-        # print('admitted', counter)
-        pass
 
 new_bear = Bear()
 new_tiger = Tiger()
 new_lion = Lion()
 new_hyena = Hyena()
 
-print(new_bear)
-print(new_tiger)
-print(new_lion)
-print(new_hyena)
+# print(new_bear)
+# print(new_tiger)
+# print(new_lion)
+# print(new_hyena)
 
-print(cleaner_names)
+# print(cleaner_names)
