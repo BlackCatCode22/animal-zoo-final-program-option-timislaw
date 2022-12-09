@@ -1,0 +1,16 @@
+ID: 734; Lou; 4 year old; birthdate: Mar 8th, 2018;  tan color; female; 70; from:  Tunisia; habitat: Hyena Habitat; arrived Dec 8, 2022 
+ID: 275; Zig; 12 year old; birthdate: Sept 8th, 2010;  brown color; male; 150; from:  Tunisia; habitat: Hyena Habitat; arrived Dec 8, 2022 
+ID: 627; Bud; 4 year old; birthdate: Mar 8th, 2018;  black color; male; 120; from:  Tunisia; habitat: Hyena Habitat; arrived Dec 8, 2022 
+ID: 217; Ed; 8 year old; birthdate: None;  black and tan striped color; female; 105; from:  Tunisia; habitat: Hyena Habitat; arrived Dec 8, 2022 
+ID: 530; Elsa; 6 year old; birthdate: Mar 8th, 2016;  tan color; female; 300; from:  Tanzania; habitat: Lion Habitat; arrived Dec 8, 2022 
+ID: 641; Nala; 12 year old; birthdate: Dec 8th, 2010;  dark tan color; female; 375; from:  Tanzania; habitat: Lion Habitat; arrived Dec 8, 2022 
+ID: 537; Kimba; 22 year old; birthdate: Sept 8th, 2000;  golden color; male; 450; from:  Tanzania; habitat: Lion Habitat; arrived Dec 8, 2022 
+ID: 568; Scar; 4 year old; birthdate: Mar 8th, 2018;  tan and brown color; female; 275; from:  Tanzania; habitat: Lion Habitat; arrived Dec 8, 2022 
+ID: 641; Cosimia; 2 year old; birthdate: Mar 8th, 2020;  gold and tan stripes color; male; 270; from:  Bangladesh; habitat: Tiger Habitat; arrived Dec 8, 2022 
+ID: 130; Amber; 4 year old; birthdate: Mar 8th, 2018;  black stripes color; female; 400; from:  Bangladesh; habitat: Tiger Habitat; arrived Dec 8, 2022 
+ID: 638; Dave; 18 year old; birthdate: Sept 8th, 2004;  gold and tan color; male; 300; from:  Nepal; habitat: Tiger Habitat; arrived Dec 8, 2022 
+ID: 505; Jiba; 3 year old; birthdate: Mar 8th, 2019;  black stripes color; female; 285; from:  Nepal; habitat: Tiger Habitat; arrived Dec 8, 2022 
+ID: 439; Snuggles; 7 year old; birthdate: Mar 8th, 2015;  brown color; male; 320; from:  Alaska; habitat: Bear Habitat; arrived Dec 8, 2022 
+ID: 212; Yogi; 25 year old; birthdate: Mar 8th, 1997;  black color; female; 425; from:  Washington; habitat: Bear Habitat; arrived Dec 8, 2022 
+ID: 9; Paddington; 4 year old; birthdate: Sept 8th, 2018;  black color; female; 355; from:  Washington; habitat: Bear Habitat; arrived Dec 8, 2022 
+ID: 511; Smokey; 4 year old; birthdate: Mar 8th, 2018;  brown color; male; 405; from:  Alaska; habitat: Bear Habitat; arrived Dec 8, 2022 
